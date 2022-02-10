@@ -1,6 +1,8 @@
 // ৬. randomuser এর ওয়েবসাইট এ গিয়ে (randomuser.me) এ গিয়ে সেখান থেকে ডাটা লোড করবে। তারপর ইউজারের ছবি দেখাবে। শুধু সেটাও না। ইউজারের location এর মধ্যে যত কিছু আছে। সব দেখাবে ওয়েবসাইট এ। অর্থাৎ street, city, coordinates, timezone যেকোন একভাবে দেখলেই হবে। তবে দেখাতে হবে। 
 
 
+//  Fetch data from randomUser website
+
 const randomUserLoad=()=>{
     fetch('https://randomuser.me/api/?results=20')
     .then(res=>res.json())
@@ -8,10 +10,10 @@ const randomUserLoad=()=>{
 }
 randomUserLoad()
 
+// display user details
+
 const randomUserDisplay=data=>{
-
     const userDetail=document.getElementById('user-detail')
-
     data.forEach(info=>{
         console.log(info)
         const div=document.createElement('div')
